@@ -28,7 +28,8 @@ namespace StocksQuote
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var reader = new StreamReader(File.OpenRead(@"c:\users\saikr\documents\visual studio 2015\Projects\SampleService\companylist.csv"));
+            var path = Directory.GetParent(Directory.GetCurrentDirectory());
+            var reader = new StreamReader(File.OpenRead(Directory.GetParent(path.ToString()) + "\\companylist.csv"));
             List<string> symbolList = new List<string>();
             while(!reader.EndOfStream)
             {
